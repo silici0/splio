@@ -11,5 +11,12 @@
             "name": "Rafael Cunha",
             "email": "silici0@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "silici0\\Splio\\" : "src/"
+        }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }
