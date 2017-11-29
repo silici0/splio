@@ -1,0 +1,15 @@
+{
+    "name": "silici0/splio",
+    "description": "Splio api access via PHP",
+    "type": "library",
+    "require": {
+        "curl/curl": "^1.8",
+        "hassankhan/config": "^0.11.2"
+    },
+    "authors": [
+        {
+            "name": "Rafael Cunha",
+            "email": "silici0@gmail.com"
+        }
+    ]
+}
