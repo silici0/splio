@@ -1,4 +1,4 @@
-<?php namespace silici0\Splio
+<?php namespace silici0\Splio;
 
 use Noodlehaus\Config;
 use Curl\Curl;
@@ -19,8 +19,9 @@ class SplioService {
 
     public function getLists()
     {
-        $finalUrl = $this->apiProcotol.$this->config->universe.":".$this->config->apiKey."@".$this->apiUrl;
-        $this->get($finalUrl);
+        $finalUrl = $this->apiProcotol.$this->apiUrl;
+        $this->curl->setBasicAuthentication($this->config->get('universe'), $this->config->get('apiKey'));
+        $this->curl->get($finalUrl);
         if ($this->curl->error)
             return $this->treatError();
         else
