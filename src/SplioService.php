@@ -10,9 +10,12 @@ class SplioService {
     private $apiUrl = "s3s.fr/api/data/1.1/";
     private $apiProcotol = "https://";
 
-    public function __construct()
+    public function __construct($path = null)
     {
-        $this->config = Config::load('config-splio.json');
+        if (!is_null($path))
+            $this->config = Config::load($path.'config-vtex.json');
+        else
+            $this->config = Config::load('config-vtex.json');
         $this->curl = new Curl();
     }
 
