@@ -13,9 +13,9 @@ class SplioService {
     public function __construct($path = null)
     {
         if (!is_null($path))
-            $this->config = Config::load($path.'config-vtex.json');
+            $this->config = Config::load($path.'config-splio.json');
         else
-            $this->config = Config::load('config-vtex.json');
+            $this->config = Config::load('config-splio.json');
         $this->curl = new Curl();
     }
 
