@@ -47,7 +47,7 @@ class SplioService {
         $finalUrl = $this->apiProcotol.$this->apiUrl;
         $this->curl->setBasicAuthentication($this->config->get('universe'), $this->config->get('apiKey'));
         $params = $this->curl_postfields_flatten($params, $post);
-        $this->curl->post($finalUrl.'contact', $params);
+        $this->curl->post($finalUrl.'contact', $post);
         if ($this->curl->error)
             return $this->treatError();
         else
@@ -59,10 +59,7 @@ class SplioService {
         $finalUrl = $this->apiProcotol.$this->apiUrl;
         $this->curl->setBasicAuthentication($this->config->get('universe'), $this->config->get('apiKey'));
         $this->curl->get($finalUrl.'contact/'.$email);
-        if ($this->curl->error)
-            return $this->treatError();
-        else
-            return json_decode($this->curl->response, true);
+        return json_decode($this->curl->response, true);
     }
 
     public function updateContact($email, $params)
